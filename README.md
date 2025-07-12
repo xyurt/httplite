@@ -6,8 +6,9 @@ A minimal HTTP/1.1 request line and header parser written in pure C.
 
 httplite is a lightweight, zero-allocation HTTP/1.1 parser designed for blazing-fast parsing using only pointer arithmetic. It parses HTTP request or response lines and headers directly from the input buffer without copying data.
 
-## Usage Example C
+## Usage Example 
 
+```C
 #include "httplite.h"
 #include <stdio.h>
 
@@ -37,7 +38,7 @@ void main() {
     else {
         printf("Failed to parse HTTP message\n");
     }
-}
+}```
 
 ## How It Works
 
