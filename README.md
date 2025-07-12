@@ -38,7 +38,8 @@ void main() {
     else {
         printf("Failed to parse HTTP message\n");
     }
-}```
+}
+```
 
 ## How It Works
 
