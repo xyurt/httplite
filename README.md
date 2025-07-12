@@ -4,7 +4,7 @@ A minimal HTTP/1.1 request line and header parser written in pure C.
 
 ## Overview
 
-httplite is a lightweight, zero-allocation HTTP/1.1 parser designed for blazing-fast parsing using only pointer arithmetic. It parses HTTP request lines and headers directly from the input buffer without copying data.
+httplite is a lightweight, zero-allocation HTTP/1.1 parser designed for blazing-fast parsing using only pointer arithmetic. It parses HTTP request or response lines and headers directly from the input buffer without copying data.
 
 ## Usage Example
 
@@ -12,7 +12,7 @@ httplite is a lightweight, zero-allocation HTTP/1.1 parser designed for blazing-
 #include <stdio.h>
 
 void main() {
-    const char *request = "GET /index.html HTTP/1.1\r\nHost: example.com\r\nConnection: close\r\n\r\n"; /* A typical http request*/
+    const char *request = "GET /index.html HTTP/1.1\r\nHost: example.com\r\nConnection: close\r\n\r\n"; /* A typical http request */
     size_t len = 66; /* Length of request without the null terminator */
 
     http_message message; /* Http message structure */
@@ -41,7 +41,7 @@ void main() {
 
 ## How It Works
 
-- Parses HTTP/1.x request line (method, path, version).
+- Parses HTTP/1.x request or response line (method, path, version).
 - Iterates over headers with zero-copy pointer arithmetic.
 - No dependencies, dynamic memory allocation or even the standart library.
 
@@ -59,7 +59,7 @@ void main() {
 
 ## Limitations
 
-- Supports HTTP/1.x request line and headers only.
+- Supports HTTP/1.x request line, response line and headers only.
 - Expects CRLF (\r\n) line endings.
 - Does not validate message bodies or headers, just does its primary job which is parsing.
 - No support for multiline headers or chunked encoding.
