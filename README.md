@@ -1,6 +1,6 @@
 # httplite
 
-A minimal single-header HTTP/1.1 request line and header parser written in pure C.
+A minimal and single-header HTTP/1.1 request line and header parser written in pure C.
 
 ## Overview
 
