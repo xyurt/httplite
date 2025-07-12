@@ -44,7 +44,7 @@ void main() {
 ## How It Works
 
 - Parses HTTP/1.x request or response line (method, path, version).
-- Iterates over headers with zero-copy pointer arithmetic.
+- Iterates over headers with zero-copy pointer arithmetic like a stream.
 - No dependencies, dynamic memory allocation or even the standart library.
 
 ## API
