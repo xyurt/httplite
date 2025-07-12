@@ -4,7 +4,7 @@ A minimal and single-header HTTP/1.1 request line and header parser written in p
 
 ## Overview
 
-httplite is a lightweight, zero-allocation HTTP/1.1 parser designed for blazing-fast parsing using only pointer arithmetic. It parses HTTP request or response lines and headers directly from the input buffer without copying data.
+httplite is ultra lightweight, zero-allocation HTTP/1.1 parser designed for blazing-fast parsing using only pointer arithmetic. It parses HTTP request or response lines and headers directly from the input buffer without copying data.
 
 ## Usage Example 
 
