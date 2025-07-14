@@ -10,7 +10,7 @@ typedef struct http_message {
     const char *next;  /* Pointer to continue reading the headers and the body as a stream */
     size_t next_length;
 } http_message;
-int http_next_header(http_message *message, const char **name, size_t *name_length, const char **value, size_t *value_length) {
+static int http_next_header(http_message *message, const char **name, size_t *name_length, const char **value, size_t *value_length) {
     if (message->next_length < 2) return 0;
     if (message->next[0] == '\r' && message->next[1] == '\n') {
         message->next += 2;
@@ -31,7 +31,7 @@ int http_next_header(http_message *message, const char **name, size_t *name_leng
     message->next_length -= next_offset;
     return 1;
 }
-int http_parse_message(const char *buffer, size_t buffer_size, http_message *out) {
+static int http_parse_message(const char *buffer, size_t buffer_size, http_message *out) {
     size_t buffer_offset = 0;
     out->part1_length = out->part2_length = out->part3_length = out->next_length = 0;
     out->part1 = &buffer[buffer_offset];
