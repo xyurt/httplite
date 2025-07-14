@@ -9,6 +9,9 @@ httplite is an ultra lightweight, zero-allocation HTTP/1.1 parser designed for b
 ## LOC
 The header file is exactly 50 lines in total...
 
+## Extended version
+Check out the "extended-version" path in the repository to get more information.
+
 ## Usage Example 
 
 ```C
