@@ -38,7 +38,7 @@ static char http_parse_message(char *buffer, int buffer_size, http_message *out)
     while (buffer_offset + 1 < buffer_size && buffer[buffer_offset++] != ' ') out->part1_length++;
     if (out->part1_length == 0 || buffer[buffer_offset] == ' ' || buffer[buffer_offset] == '\r' || buffer[buffer_offset] == '\n') return 0;
     out->part2 = &buffer[buffer_offset];
-    while (buffer_offset + 1 < buffer_size && buffer[buffer_offset++] != ' ' && buffer[buffer_offset] != '\r') out->part2_length++;
+    while (buffer_offset + 1 < buffer_size && buffer[buffer_offset] != '\r' && buffer[buffer_offset++] != ' ') out->part2_length++;
     if (out->part2_length == 0 || buffer[buffer_offset] == ' ' || buffer[buffer_offset] == '\n') return 0;
     out->part3 = &buffer[buffer_offset];
     while (buffer_offset + 1 < buffer_size && buffer[buffer_offset++] != '\r') out->part3_length++;
