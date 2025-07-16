@@ -1,3 +1,5 @@
+#ifndef HTTP_PARSER_EXT
+#define HTTP_PARSER_EXT
 #include "httplite.h"
 #include <ctype.h>
 #include <string.h>
@@ -119,3 +121,4 @@ static char http_next_header_ext(http_message *message, http_header *out) {
     }
     return 1;
 }
+#endif
